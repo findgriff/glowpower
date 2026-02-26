@@ -1,0 +1,22 @@
+# Glow Power robots.txt
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Sitemaps
+Sitemap: https://glowpower.co.uk/sitemap.xml
+
+# Crawl delay (optional - set to 1 second)
+Crawl-delay: 1
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

@@ -1,0 +1,46 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D1B2A"/>
+      <stop offset="1" stop-color="#162E45"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1120 280) rotate(112) scale(620 960)">
+      <stop stop-color="#E8A020" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#E8A020" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8A020" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#E8A020" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <g opacity="0.5" stroke="#5A6A7F" stroke-width="2">
+    <path d="M180 860L280 210L380 860"/>
+    <path d="M650 860L740 130L840 860"/>
+    <path d="M1080 860L1180 190L1280 860"/>
+    <path d="M270 310H360"/>
+    <path d="M730 250H830"/>
+    <path d="M1170 300H1260"/>
+  </g>
+
+  <g stroke="url(#line)" stroke-width="3">
+    <path d="M0 280C320 320 520 240 810 290C1080 330 1310 250 1600 290"/>
+    <path d="M0 360C320 400 620 300 890 360C1160 420 1380 330 1600 360"/>
+    <path d="M0 440C330 470 610 390 900 445C1190 500 1400 410 1600 440"/>
+  </g>
+
+  <g opacity="0.9">
+    <circle cx="290" cy="200" r="8" fill="#E8A020"/>
+    <circle cx="510" cy="340" r="7" fill="#E8A020"/>
+    <circle cx="780" cy="250" r="9" fill="#E8A020"/>
+    <circle cx="1020" cy="380" r="7" fill="#E8A020"/>
+    <circle cx="1310" cy="290" r="8" fill="#E8A020"/>
+  </g>
+
+  <rect x="80" y="730" width="340" height="120" rx="14" fill="#0E2438" fill-opacity="0.76" stroke="#2D4359"/>
+  <text x="110" y="778" fill="#E8A020" font-family="Inter, sans-serif" font-size="32" font-weight="700">Demand Index</text>
+  <text x="110" y="822" fill="#D2DBE7" font-family="Inter, sans-serif" font-size="26">+18.4% YoY</text>
+</svg>
