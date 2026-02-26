@@ -1,0 +1,26 @@
+{
+  "root": ".",
+  "routes": {
+    "/**": "index.html"
+  },
+  "error": "index.html",
+  "https_redirect": true,
+  "clean_urls": true,
+  "headers": [
+    {
+      "path": "/**",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block"
+      }
+    },
+    {
+      "path": "/*.html",
+      "headers": {
+        "Cache-Control": "public, max-age=604800"
+      }
+    }
+  ]
+}
