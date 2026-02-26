@@ -64,7 +64,9 @@
   <div class="form-right">
     <div class="form-container">
       <h2>Request a Quote</h2>
-      <form data-lead-form>
+      <form action="https://api.web3forms.com/submit" method="POST" data-lead-form>
+        <input type="hidden" name="access_key" value="86a21dcb-87ca-4cab-a9bd-fb2f7c8e55cb">
+        <input type="hidden" name="subject" value="New inquiry from Glow Power website">
         <div class="form-group">
           <div>
             <label for="name">Full Name*</label>

@@ -103,13 +103,46 @@ function setupLeadForms() {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
-      fetch('https://formspree.io/f/mxxxyyxx', {
+      var accessKeyInput = form.querySelector('[name="access_key"]');
+      var accessKey = accessKeyInput ? accessKeyInput.value : '';
+      if (!accessKey) {
+        alert('Form is not configured correctly. Please contact support.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        return;
+      }
+
+      var payload = {
+        access_key: accessKey,
+        subject: 'New inquiry from Glow Power website',
+        from_name: formData.name,
+        name: formData.name,
+        company: formData.company,
+        email: formData.email,
+        phone: formData.phone,
+        spend: formData.spend,
+        message: formData.message,
+        page_url: window.location.href
+      };
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
       })
         .then(function (response) {
-          if (response.ok) {
+          return response.json().then(function (result) {
+            return {
+              ok: response.ok,
+              result: result
+            };
+          });
+        })
+        .then(function (responseData) {
+          if (responseData.ok && responseData.result && responseData.result.success) {
             submitBtn.textContent = "Message sent. We'll respond within 2 business hours.";
             form.reset();
             setTimeout(function () {
@@ -119,7 +152,9 @@ function setupLeadForms() {
             return;
           }
 
-          throw new Error('Formspree request failed');
+          throw new Error(
+            (responseData.result && responseData.result.message) || 'Web3Forms request failed'
+          );
         })
         .catch(function (error) {
           console.error('Error sending form:', error);
